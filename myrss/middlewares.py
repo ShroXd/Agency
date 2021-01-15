@@ -8,6 +8,8 @@ from scrapy import signals
 # useful for handling different item types with a single interface
 from itemadapter import is_item, ItemAdapter
 
+from fake_useragent import UserAgent
+
 
 class MyrssSpiderMiddleware:
     # Not all methods need to be defined. If a method is not defined,
@@ -101,3 +103,10 @@ class MyrssDownloaderMiddleware:
 
     def spider_opened(self, spider):
         spider.logger.info('Spider opened: %s' % spider.name)
+
+
+class RandomUserAgentMiddleware(object):
+    def process_request(self, request, spider):
+        ua = UserAgent()
+        current_ua = ua.random
+        request.headers['User-Agent'] = current_ua

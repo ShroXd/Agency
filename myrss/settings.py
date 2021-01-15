@@ -88,3 +88,11 @@ DOWNLOAD_DELAY = 3
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 
 LOG_LEVEL='ERROR'
+
+DOWNLOADER_MIDDLEWARES = {
+    'myrss.middlewares.MyrssDownloaderMiddleware': 543,
+    'myrss.middlewares.RandomUserAgentMiddleware': 544,
+
+    'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware': None,
+    'scrapy.contrib.downloadermiddleware.httpproxy.HttpProxyMiddleware': None
+}
