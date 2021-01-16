@@ -27,7 +27,7 @@ DOWNLOAD_DELAY = 3
 
 
 # Log
-LOG_LEVEL = 'ERROR'
+LOG_LEVEL = 'DEBUG'
 
 
 # Middlewares

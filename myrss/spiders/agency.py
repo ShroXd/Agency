@@ -8,7 +8,7 @@ from requests.exceptions import ProxyError, SSLError
 
 
 class AgencySpider(scrapy.Spider):
-    name = 'agency'
+    name = 'ihuan'
     allowed_domains = ['ip.ihuan.me']
     start_urls = ['https://ip.ihuan.me/address/5Lit5Zu9.html']
 
